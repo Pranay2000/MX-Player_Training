@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Week-1 Assignments</title>
+    <script>
+        //Task 1 Pattern Printing
+        document.write("Task-1: Pattern Printing")
+        document.write("<br />");
+        document.write("<br />");
+        var i,j;
+        for(i=1; i<=4; i++) {
+            for(j=i; j<=4; j++)
+                document.write("*");
+            document.write("<br />");
+        }
+
+        for(i=2; i<=4; i++) {
+            for(j=1; j<=i; j++) 
+                document.write("*");
+            document.write("<br />");
+        }
+
+        document.write("<br />");
+
+        //Task-2 Adding odd elements upto 20 in an array and printing it.
+        document.write("Task-2: Array Problem");
+        document.write("<br />");
+        document.write("<br />");
+        var arr = [];
+        for(var i=1; i<=20; i++) {
+            if(i % 2 != 0) {
+                arr.push(i);
+            }
+        }
+
+        document.write(arr);
+        document.write("<br />");
+        document.write("<br />");
+        document.write("<br />");
+
+        //Task-3 BankingApp 
+        document.write("Task-3: bankingApp to create, deposit and withdraw money");
+        document.write("<br />");
+        document.write("<br />");
+        function bankingApp() {
+            this.balance = 0;
+            this.openAccount = function(amount) {
+                this.balance = amount;
+                document.write("Your account has been opened with balance: " + amount);
+            }
+
+            this.deposit = function(depositAmount) {
+                this.balance = this.balance + depositAmount;
+                document.write("You have successfully deposited: " + depositAmount);
+                document.write("<br />");
+                document.write("The total balance in your account is: " + this.balance);
+            }
+
+            this.withdraw = function(withdrawAmount) {
+                if(withdrawAmount > this.balance) {
+                    document.write("You cannot withdraw as there is not enough balance");
+                } else {
+                    this.balance = this.balance - withdrawAmount;
+                    document.write("You have withdrawn " + withdrawAmount + " successfully.");
+                    document.write("<br />");
+                    document.write("Balance after withdrawing is: " + this.balance);
+                }
+            }
+        }
+
+        var account = new bankingApp();
+        account.openAccount(5000);
+        document.write("<br />");
+        document.write("<br />");
+
+        account.deposit(10000);
+        document.write("<br />");
+        document.write("<br />");
+
+        account.withdraw(11000);
+        document.write("<br />");
+        document.write("<br />");
+        document.write("<br />");
+
+        //Task-4 
+        document.write("Task-4");
+        document.write("<br />");
+        document.write("<br />");
+
+        function arrayOfTasks() {
+            this.taskArray = ["Football", "BasketBall", "Cricket", "Table Tennis", "Badminton"];
+            document.write(this.taskArray);
+
+            this.remove = function(i) {
+                document.write("<br />");
+                document.write("<br />");
+                this.taskArray.splice(i, 2);
+                document.write("Updated Array is: ");
+                document.write("<br />");
+                document.write(this.taskArray);
+            }
+        }
+
+        var obj = new arrayOfTasks();
+        obj.remove(2);
+
+    </script> 
+    </head>
+</html>
